@@ -203,7 +203,7 @@ def tag2file(ipath, opath):
     #move music files
     dest = dsts.pop()
     mkdir_p(dest)
-    print 'moving files to {}'.format(dest)
+    print 'moving files to {}'.format(dest.encode('utf-8'))
 
     for src, dst in tomove:
         if src == dst: continue
