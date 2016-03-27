@@ -140,7 +140,11 @@ def _tag(path, mod, rem):
             for m in mod:
                 k, v = m.split('=')
                 #del f.tags[k]
-                f.tags[k.upper()] = [unicode(v,'utf-8')]
+                if len(v) > 3 and v[:3]=='@T:':
+                    f.tags[k.upper()] = f.tags[v[3:].upper()]
+                    del f.tags[v[3:]]
+                else:
+                    f.tags[k.upper()] = [unicode(v,'utf-8')]
         if rem is not None:
             for r in rem:
                 del f.tags[r.upper()]
