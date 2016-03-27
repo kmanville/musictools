@@ -20,7 +20,7 @@ args = parser.parse_args()
 
 mustypes = set(['.mp3','.flac','.ogg'])
 exttypes = set(['.jpg','.jpeg','.png','.tif','.tiff', '.log', '.cue'])
-pattern = os.path.join('%genre%', '%artist%| [%country%]|', '%type%', '%date% %album%| [%issue%]|', '|%discnumber%|%tracknumber% %title%| [%source%]|')
+pattern = os.path.join('%genre%', '%artist%| [%country%]|', '%type%', '%date% %album%| [%issue%]|', '|%discnumber%|%tracknumber% %title%| {%performer%}|| [%source%]|')
 
 def mkdir_p(path):
     try:
